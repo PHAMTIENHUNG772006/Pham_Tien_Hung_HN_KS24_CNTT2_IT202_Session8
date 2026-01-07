@@ -128,8 +128,13 @@ order by solan desc limit 1;
 
 
 -- PHẦN III – TRUY VẤN LỒNG
+
 -- ●Hiển thị những phòng có giá thuê cao hơn giá trung bình của tất cả các phòng
+select * from rooms 
+where price_per_day > (select avg(price_per_day) from rooms );
 -- ●Hiển thị những khách chưa từng đặt phòng
+select * from guestsu 
+where guest_id > (select guest_id from bookings )
 -- ●Tìm phòng được đặt nhiều lần nhấ
 
 
